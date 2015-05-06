@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+	<service name="hello">
+		<parameter name="ServiceClass">
+			service.HelloService
+		</parameter>
+		<!-- messageReceivers元素用于设置处理webservice方法的处理器,
+			 RPCMessageReceiver可处理输入输出
+			 RPCInOnlyMessageReceiver只能处理输入 -->
+		<messageReceivers>
+			<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"  
+            	class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />  
+        	<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"  
+            	class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+		</messageReceivers>
+	</service>
+</serviceGroup>
